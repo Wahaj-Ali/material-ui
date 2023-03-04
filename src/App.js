@@ -1,32 +1,32 @@
-import { Button, styled, Typography } from "@mui/material";
-import SettingsIcon from '@mui/icons-material/Settings';
-import AddIcon from '@mui/icons-material/Add';
+import { Sidebar } from "./components/Sidebar";
+import { Rightbar } from "./components/Rightbar";
+import { Feed } from "./components/Feed";
+import { Box, Stack } from "@mui/material";
+import { Navbar } from "./components/Navbar";
 
 function App() {
 
-  const BlueButton = styled(Button)({
-    backgroundColor: "skyblue",
-        color:"#888",
-        margin:5,
-        "&:hover":{
-          backgroundColor: "lightblue"
-        },
-        "&:disabled": {
-          backgroundColor: "grey",
-          color: "white"
-        },
-  });
+  // const BlueButton = styled(Button)({
+  //   backgroundColor: "skyblue",
+  //       color:"#888",
+  //       margin:5,
+  //       "&:hover":{
+  //         backgroundColor: "lightblue"
+  //       },
+  //       "&:disabled": {
+  //         backgroundColor: "grey",
+  //         color: "white"
+  //       },
+  // });
   return (
-    <div>
-      <Button variant="text">Text</Button>
-      <Button variant="contained" color="primary" startIcon={<SettingsIcon />}>Settings</Button>
-      <Button variant="contained" color="secondary" startIcon={<AddIcon />}>Add new post</Button>
-      <Button variant="outlined">Outlined</Button>
-      <Typography variant="h1">
-        h1 Heading
-      </Typography>;
-      <BlueButton>My Button</BlueButton>
-    </div>
+    <Box>
+      <Navbar />
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </Box>
   );
 }
 

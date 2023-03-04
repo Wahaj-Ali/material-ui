@@ -13,4 +13,7 @@ export const theme = createTheme({
             main: "#999"
         }
     },
+    shape: {
+        borderRadius:"10px",
+    }
 })
