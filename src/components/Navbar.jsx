@@ -1,8 +1,9 @@
-import { AppBar, Toolbar, Typography, InputBase, Badge, Avatar, styled } from '@mui/material'
+import { AppBar, Toolbar, Typography, InputBase, Badge, Avatar, styled, Menu, MenuItem } from '@mui/material'
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import { Box } from '@mui/system';
 import MailIcon from '@mui/icons-material/Mail';
 import { Notifications } from '@mui/icons-material';
+import { useState } from 'react';
 
 const StyleToolbar = styled(Toolbar)({
   display: "flex",
@@ -35,6 +36,9 @@ const UserBox = styled(Box)(({theme}) => ({
 }));
 
 export const Navbar = () => {
+
+   const [open, setOpen] = useState(false);
+   const [anchorEl, setAnchorEl] = useState(null);
   return (
     <AppBar position='sticky'>
       <StyleToolbar>
@@ -48,13 +52,33 @@ export const Navbar = () => {
           <Badge badgeContent={4} color="error">
             <Notifications />
           </Badge>
-          <Avatar sx={{width:30, height:30}}/>
+          <Avatar sx={{width:30, height:30}}
+            onClick={e=>setOpen(true)}/>
         </Icons>
-        <UserBox >
+        <UserBox onClick={e=>setOpen(true)}>
         <Avatar sx={{width:30, height:30}}/>
         <Typography variant='span'>User</Typography>
         </UserBox>
       </StyleToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={e=>setOpen(false)}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   )
 }
