@@ -22,7 +22,7 @@ export const Sidebar = () => {
       p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      <Box sx={{position:'fixed'}}>
+      <Box position={'fixed'}>
       <List>
         <ListItem disablePadding>
           <ListItemButton>
