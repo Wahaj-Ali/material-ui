@@ -38,11 +38,10 @@ const UserBox = styled(Box)(({theme}) => ({
 export const Navbar = () => {
 
    const [open, setOpen] = useState(false);
-   const [anchorEl, setAnchorEl] = useState(null);
   return (
     <AppBar position='sticky'>
       <StyleToolbar>
-        <Typography variant='h6' sx={{ display: { xs: "none", sm: "block" } }}>Wahaj Ali</Typography>
+        <Typography variant='h6' sx={{ display: { xs: "none", sm: "block" } }}>Let's Connect</Typography>
         <HandshakeIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search><InputBase placeholder='search...' /></Search>
         <Icons>
@@ -65,7 +64,6 @@ export const Navbar = () => {
         aria-labelledby="demo-positioned-button"
         open={open}
         onClose={e=>setOpen(false)}
-        anchorEl={anchorEl}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
