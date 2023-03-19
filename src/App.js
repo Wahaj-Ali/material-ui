@@ -5,19 +5,6 @@ import { Box, Stack } from "@mui/material";
 import { Navbar } from "./components/Navbar";
 
 function App() {
-
-  // const BlueButton = styled(Button)({
-  //   backgroundColor: "skyblue",
-  //       color:"#888",
-  //       margin:5,
-  //       "&:hover":{
-  //         backgroundColor: "lightblue"
-  //       },
-  //       "&:disabled": {
-  //         backgroundColor: "grey",
-  //         color: "white"
-  //       },
-  // });
   return (
     <Box>
       <Navbar />
